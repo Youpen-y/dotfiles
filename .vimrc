@@ -1,3 +1,6 @@
+" basic theme setting
+set background=dark
+colorscheme slate
 syntax on 		" Syntax highlighting
 filetype on		" filetype on
 set mouse=a		" tell vim to recognize mouse commands in all modes
@@ -47,7 +50,7 @@ call plug#end()
 nnoremap <A-f> :NERDTreeFind<CR> 
 nnoremap <C-t> :NERDTreeToggle<CR>
 " Start NERDTree and leave the cursor in it
-autocmd VimEnter * NERDTree 
+"autocmd VimEnter * NERDTree 
 " NERDTree conf end
 
 """ fzf conf begin
