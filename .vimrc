@@ -11,7 +11,7 @@ set shiftwidth=4	" Level of indentation
 
 set encoding=utf-8
 set fileencoding=utf-8
-let mapleader = " "  " set <leader> key equals to backspace
+"let mapleader = " "  " set <leader> key equals to backspace (not use)
 
 """ Keystrokes 
 " ctrl+c <=> copy in visual mode
