@@ -1,0 +1,18 @@
+[user]
+    name = Youpen-y
+    email = yongy2022@outlook.com
+[core]
+    editor = vim
+[init]
+    defaultBranch = main
+[color]
+    ui = auto
+[commit]
+    template = ~/.gitmessage.txt
+[push]
+    default = current
+
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/
+#[url "git@gitlab.com:"]
+#	insteadOf = https://gitlab.com/

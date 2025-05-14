@@ -1,0 +1,17 @@
+
+# (Title:) Brief summary of changes (max 50 characters)
+#
+# (Detailed description:)
+# - Explain the *what* and *why* of the changes, not the *how*.
+# - Include relevant issue or task IDs.
+# - Wrap lines at 72 characters for readability.
+#
+# Example:
+#
+# Fix user login crash
+#
+# - Resolved a null pointer exception causing application crashes during user login.
+# - Added unit tests to cover this scenario.
+# - Related issue: #123
+#
+# Co-authored-by: Name <email@example.com>
