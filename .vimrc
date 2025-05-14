@@ -1,13 +1,16 @@
 " basic theme setting
 "set background=dark
 "colorscheme slate
-syntax on 		" Syntax highlighting
-filetype on		" filetype on
-set mouse=a		" tell vim to recognize mouse commands in all modes
-set showmatch 		" Shows matching brackets
-set ruler 		" Always shows location in file(line#)
-set smarttab 		" Autotabs for certain code
-set shiftwidth=4	" Level of indentation
+syntax on           " Syntax highlighting
+filetype on         " filetype on
+set mouse=a         " tell vim to recognize mouse commands in all modes
+set showmatch       " Shows matching brackets
+set ruler           " Always shows location in file(line#)
+set expandtab       " Replace Tab with backspace
+set tabstop=4       " Tab = 4 backspace width
+set shiftwidth=4    " Level of indentation
+set softtabstop=4   " Tab and Backspace operate on 4 space
+set smarttab        " Autotabs for certain code
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -25,20 +28,24 @@ inoremap <C-v> <C-r>+
 " ctrl+a <=> select whole file
 nnoremap <C-a> ggvG
 
-" Keystrokes for vim
-inoremap <C-s> <esc>:w<cr>	" save files
+" ctrl+s <=> save changes in insert mode and normal mode
+inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
-inoremap <C-d> <esc>:wq!<cr>	" save and exit
-nnoremap <C-d> :wq!<cr>
-inoremap <C-q> <esc>:qa!<cr>	" quit discarding changes
-nnoremap <C-q> :qa!<cr>
 
+" ctrl+d <=> save and exit
+inoremap <C-d> <esc>:wq!<cr>
+nnoremap <C-d> :wq!<cr>
+
+" ctrl+q <=> quit discarding changes
+inoremap <C-q> <esc>:qa!<cr>
+nnoremap <C-q> :qa!<cr>
+""" Keystrokes end
 
 """ Plugins
 " vim-plug manager conf begin
 call plug#begin()
 Plug 'junegunn/vim-easy-align'  " vim-easy-align: alignment plugin
-Plug 'preservim/nerdtree'	" nerdtree: file system explorer for vim
+Plug 'preservim/nerdtree'       " nerdtree: file system explorer for vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -52,10 +59,11 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 "autocmd VimEnter * NERDTree 
 " NERDTree conf end
 
-""" fzf conf begin
+" fzf conf begin
 nnoremap <silent> <C-p> :Files<CR> 
 " fzf layout
 let g:fzf_layout = { 'down': '~40%' }
 " text search
 nnoremap <silent> <C-f> :Ag<Cr>
-""" fzf conf end
+" fzf conf end
+""" Plugins end
