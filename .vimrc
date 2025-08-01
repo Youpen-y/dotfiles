@@ -48,7 +48,8 @@ Plug 'junegunn/vim-easy-align'  " vim-easy-align: alignment plugin
 Plug 'preservim/nerdtree'	" nerdtree: file system explorer for vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'rhysd/git-messenger.vim' 
+Plug 'rhysd/git-messenger.vim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 " vim-plug manager conf end
 
