@@ -1,20 +1,20 @@
 " basic theme setting
 "set background=dark
 "colorscheme slate
-syntax on           " Syntax highlighting
-filetype on         " filetype on
-set mouse=a         " tell vim to recognize mouse commands in all modes
-set showmatch       " Shows matching brackets
-set ruler           " Always shows location in file(line#)
-set expandtab       " Replace Tab with backspace
-set tabstop=4       " Tab = 4 backspace width
-set shiftwidth=4    " Level of indentation
-set softtabstop=4   " Tab and Backspace operate on 4 space
-set smarttab        " Autotabs for certain code
+syntax on			" Syntax highlighting
+filetype on			" filetype on
+set mouse=a			" tell vim to recognize mouse commands in all modes
+set showmatch		" Shows matching brackets
+set ruler			" Always shows location in file(line#)
+set noexpandtab		" Tab is real tab, not backspace
+set tabstop=4		" Tab = 4 backspace width
+set shiftwidth=4	" Level of indentation
+"set softtabstop=4	" Tab and Backspace operate on 4 space
+"set smarttab		" Autotabs for certain code
 
 set encoding=utf-8
 set fileencoding=utf-8
-"let mapleader = " "  " set <leader> key equals to backspace (not use)
+let mapleader = " "  " set <leader> key equals to backspace (not use)
 
 """ Keystrokes 
 " ctrl+c <=> copy in visual mode
@@ -45,9 +45,10 @@ nnoremap <C-q> :qa!<cr>
 " vim-plug manager conf begin
 call plug#begin()
 Plug 'junegunn/vim-easy-align'  " vim-easy-align: alignment plugin
-Plug 'preservim/nerdtree'       " nerdtree: file system explorer for vim
+Plug 'preservim/nerdtree'	" nerdtree: file system explorer for vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rhysd/git-messenger.vim' 
 call plug#end()
 " vim-plug manager conf end
 
@@ -60,10 +61,23 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 " NERDTree conf end
 
 " fzf conf begin
-nnoremap <silent> <C-p> :Files<CR> 
-" fzf layout
-let g:fzf_layout = { 'down': '~40%' }
-" text search
-nnoremap <silent> <C-f> :Ag<Cr>
+nnoremap <silent> <Leader>f :Files<CR>		
+nnoremap <silent> <Leader>b :Buffers<CR>	
+nnoremap <silent> <Leader>l :Lines<CR>	
+nnoremap <silent> <Leader>g :GFiles?<CR>
+nnoremap <silent> <Leader>h :History<CR>
+" search with riggrep
+if executable('rg')
+	let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
+	let $FZF_DEFAULT_OPTS = '--height 40% --layout=reverse --border'
+endif
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'yoffset': 0.1 } }
+
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
 " fzf conf end
+
+" git-messenger conf begin
+nnoremap <C-g> :GitMessenger<CR>
 """ Plugins end
